@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link href="/static/style.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </head>
+    <body class="main">
+        {% if session["user_id"] %}
+            <div class="mainbar">
+                <nav class="navbar navbar-expand-lg custom-navbar">
+                    <div class="container-fluid">
+                        <a class="navbar-brand">CS50 FINAL PROJECT</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav">
+                                <a class="nav-link" href="/"><i class="bi bi-book"></i> Courses</a>
+                                <a class="nav-link" href="/planner"><i class="bi bi-calendar3"></i>Semester Planner</a>
+                                <a class="nav-link" href="/grades"><i class="bi bi-journal-check"></i>Grades</a>
+                                <a class="nav-link" href="/progress"><i class="bi bi-graph-up-arrow"></i>Progress</a>
+                                <a class="nav-link" href="/logout"><i class="bi bi-box-arrow-right"></i>Log-Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        {% else %}
+                <div class="heading-body">
+                    <h1 class="h1-heading">UNIVERSITY DEGREE PLANNER</h1>
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/register"><i class="bi bi-person-plus"></i>Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login"><i class="bi bi-box-arrow-in-right"></i>Log-In</a>
+                        </li>
+                    </ul>
+                </div>
+        {% endif %}
+        {% block body %}{% endblock %}
+    </body>
+</html>
+
+

@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block body %}
+    <div class="login-body">
+        <form action="/login" method="post">
+            <div class="login-label">
+                <label class="form-label">Username</label>
+                <input name="username" type="text" id="username" class="form-control w-50" autocomplete="off" autofocus>
+                <label class="form-label">Password</label>
+                <input name="password" type="password" id="password" class="form-control w-50" aria-describedby="passwordHelpBlock">
+            </div>
+            <p></p>
+            <button class="login-register-button" type="submit">Log In</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block title %}
+    Progress
+{% endblock %}
+{% block body %}
+    <div class="progress-body">
+        <h1>Dashboard</h1>
+        <hr>
+        <h3>Welcome back, {{name}}!</h3>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="static/gpa.jpg" class="card-img-top" alt="CGPA picture">
+                    <div class="card-body">
+                        <h3 class="card-title">CGPA</h3>
+                        <h5 class="card-text">{{cgpa}}</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="static/credits.jpg" class="card-img-top" alt="Credits picture">
+                    <div class="card-body">
+                        <h3 class="card-title">Credits Completed</h3>
+                        <h5 class="card-text">{{total}}</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="static/books.jpg" class="card-img-top" alt="gpa picture">
+                    <div class="card-body">
+                        <h3 class="card-title">Highest Semester GPA</h3>
+                        <h5 class="card-text">{{highest}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p></p>
+        <h3>Degree Progress: {{percentage}}%</h3>
+        <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar
+            {% if percentage < 30 %}
+                bg-danger
+            {% elif percentage < 60 %}
+                bg-warning
+            {% elif percentage < 80 %}
+                bg-info
+            {% else %}
+                bg-success
+            {% endif %}"" style="width: {{percentage}}%"></div>
+             </div>
+        {% if total == 120 %}
+            <h2>You have completed your degree, Congratulations!</h2>
+        {% endif %}
+            <h4>Keep going! Only {{remaining}} Credits Remaining!</h4>
+    </div>
+{% endblock %}

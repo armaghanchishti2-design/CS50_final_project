@@ -1,0 +1,138 @@
+.h1-apology {
+    text-align: center;
+}
+.heading-courses{
+    text-align: center;
+    background-color: #000814;
+    color: gold;
+    font-family:Georgia, sans-serif;
+    font-weight:bold;
+}
+.heading-body{
+    background-color: #4E94DA;
+}
+.h1-heading{
+    text-align: center;
+    font-family: Georgia, sans-serif;
+    font-weight: bolder;
+    color: black;
+}
+.apology-body{
+    min-height: 100vh;
+    background-image: url("error.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: contain;
+}
+.login-body{
+    min-height: 100vh;
+    min-width: 100vw;
+    background-image: url("login.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 350px;
+    margin: auto;
+}
+.register-body{
+    min-height: 100vh;
+    min-width: 100vw;
+    background-image: url("login.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 350px;
+    margin: auto;
+}
+label{
+    color: white;
+    font-size: 22px;
+    font-family: Trebuchet, sans-serif;
+    font-weight: bold;
+}
+.login-register-button{
+    width: 130px;
+    height: 40px;
+    border-radius: 20px;
+    font-family: Tahoma, sans-serif;
+    font-weight: bold;
+    background-color: #00cbff;
+}
+.nav-link {
+    color: white;
+    font-size: 16px;
+    font-family: "Tahoma", sans-serif;
+}
+
+.nav-link:hover {
+    color: yellow;
+}
+.custom-navbar {
+    background-color: #000814;
+}
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link {
+    color: gold;
+    font-size: 16px;
+    font-family: "Tahoma", sans-serif;
+}
+.custom-navbar .nav-link:hover{
+    color: blue;
+}
+.planner-body{
+    background-color: #000814;
+    color: #FDFBF7
+}
+.custom-table{
+    width:100%;
+    background-color: grey;
+}
+.custom-table th{
+    border: 2px solid black;
+    color: black;
+    font-size: 20px;
+}
+.custom-table tr,td{
+    border: 2px solid black;
+    font-family:"Arial", sans-serif;
+
+}
+.semester{
+    font-family:"Arial", sans-serif;
+}
+.delete-button{
+    border-radius: 10px;
+    font-family: Tahoma, sans-serif;
+    font-weight: bold;
+    background-color: red;
+}
+.grades-body{
+    background-color: #000814;
+    color: #FDFBF7
+}
+.gpa-button{
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-weight:bold;
+    background-color: #00cbff;
+}
+.card-title{
+    text-align:center;
+    font-family: Georgia,sans-serif;
+    font-weight:bold;
+}
+.card-text{
+    text-align:center;
+}
+img{
+    height:250px;
+    width:220px;
+}
+.progress-body{
+    background-color: #000814;
+    color: #FDFBF7
+}
+.nav-link i {
+    margin-right: 8px;
+}

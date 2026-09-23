@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block title %}
+    GPA Calculator
+{% endblock %}
+{% block body %}
+    <div class="grades-body">
+        {% for sem in range(1,9) %}
+            <h1 class="semester">SEMESTER {{sem}}</h1>
+            <form action="/grades" method="post">
+                <table class="custom-table">
+                    <tr>
+                        <th>Course Code</th>
+                        <th>Course Name</th>
+                        <th>Grade Obtained</th>
+                    </tr>
+                    {% for complete in completed %}
+                        {% if complete["semester"] == sem %}
+                            <input type="hidden" name="course_id" value="{{ complete['id'] }}">
+                            <tr>
+                                <td>{{complete["code"]}}</td>
+                                <td>{{complete["name"]}}</td>
+                                <td>
+                                        <select name="grade_{{complete['id']}}" required>
+                                            <option value="" selected disabled>Select Grade</option>
+                                            <option value="A+" {% if complete['grade'] == 'A+' %}selected{% endif %}>A+</option>
+                                            <option value="A" {% if complete['grade'] == 'A' %}selected{% endif %}>A</option>
+                                            <option value="A-" {% if complete['grade'] == 'A-' %}selected{% endif %}>A-</option>
+                                            <option value="B+" {% if complete['grade'] == 'B+' %}selected{% endif %}>B+</option>
+                                            <option value="B" {% if complete['grade'] == 'B' %}selected{% endif %}>B</option>
+                                            <option value="B-" {% if complete['grade'] == 'B-' %}selected{% endif %}>B-</option>
+                                            <option value="C+" {% if complete['grade'] == 'C+' %}selected{% endif %}>C+</option>
+                                            <option value="C" {% if complete['grade'] == 'C' %}selected{% endif %}>C</option>
+                                            <option value="C-" {% if complete['grade'] == 'C-' %}selected{% endif %}>C-</option>
+                                            <option value="D+" {% if complete['grade'] == 'D+' %}selected{% endif %}>D+</option>
+                                            <option value="D" {% if complete['grade'] == 'D' %}selected{% endif %}>D</option>
+                                            <option value="D-" {% if complete['grade'] == 'D-' %}selected{% endif %}>D-</option>
+                                            <option value="F" {% if complete['grade'] == 'F' %}selected{% endif %}>F</option>
+                                        </select>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                </table>
+                <input type="hidden" name="semester" value="{{ sem }}">
+                <p></p>
+                <button type="submit" class="gpa-button">CACULATE SEMESTER GPA</button>
+            </form>
+            <h3>Semester GPA: {{gpa[sem]}}</h3>
+            <hr>
+        {% endfor %}
+    </div>
+{% endblock %}
